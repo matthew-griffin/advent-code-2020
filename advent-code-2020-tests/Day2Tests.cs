@@ -1,6 +1,3 @@
-using System;
-using System.Linq;
-using System.Text.RegularExpressions;
 using advent_of_code_2020;
 using NUnit.Framework;
 
@@ -14,23 +11,27 @@ namespace advent_code_2020
                                                "2-9 c: ccccccccc\n";
 
 
-
         [Test]
-        public void ItShouldMarkFirstExampleAsValid()
+        public void ItShouldMarkFirstExampleCorrectly()
         {
-            Assert.That(Day2.IsPasswordValid("1-3 a: abcde"), Is.True);
+            var policyAndPassword = "1-3 a: abcde";
+            Assert.That(Day2.IsPart1PasswordValid(policyAndPassword), Is.True);
+            Assert.That(Day2.IsPart2PasswordValid(policyAndPassword), Is.True);
         }
 
         [Test]
-        public void ItShouldMarkSecondExampleAsInvalid()
+        public void ItShouldMarkSecondExampleCorrectly()
         {
-            Assert.That(Day2.IsPasswordValid("1-3 b: cdefg"), Is.False);
+            var policyAndPassword = "1-3 b: cdefg";
+            Assert.That(Day2.IsPart1PasswordValid(policyAndPassword), Is.False);
+            Assert.That(Day2.IsPart2PasswordValid(policyAndPassword), Is.False);
         }
 
         [Test]
-        public void ItShouldFindTwoValidPasswordsInExample()
+        public void ItShouldFindCorrectValidPasswordCountFromExample()
         {
-            Assert.That(Day2.GetValidPasswordCount(exampleInput), Is.EqualTo(2));
+            Assert.That(Day2.GetPart1ValidPasswordCount(exampleInput), Is.EqualTo(2));
+            Assert.That(Day2.GetPart2ValidPasswordCount(exampleInput), Is.EqualTo(1));
         }
     }
 }
