@@ -15,7 +15,6 @@ namespace advent_code_2020
 
         private static List<int> FindSumFactors(List<int> input, int start, int factors, int targetSum)
         {
-            var result = new List<int>();
             for (var i = start; i < input.Count; i++)
             {
                 var current = input[i];
