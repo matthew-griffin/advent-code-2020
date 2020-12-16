@@ -1,18 +1,16 @@
 MANDATORY_FIELDS = ["byr","iyr","eyr","hgt","hcl","ecl","pid"]
-OPTIONAL_FIELDS = ["cid"]
 
 FIELD_VALIDATION = {
-    "byr" => -> val {val.to_i > 1919 && val.to_i < 2003},
-    "iyr" => -> val {val.to_i > 2009 && val.to_i < 2021},
-    "eyr" => -> val {val.to_i > 2019 && val.to_i < 2031},
+    "byr" => -> val {val.to_i.between?(1920, 2002)},
+    "iyr" => -> val {val.to_i.between?(2010, 2020)},
+    "eyr" => -> val {val.to_i.between?(2020, 2030)},
     "hgt" => -> val {
       match = /^(\d+)(in|cm)$/.match(val)
       return false unless match != nil
-      height = match[1].to_i
       if match[2] == "in"
-        return height > 58 && height < 77
+        return match[1].to_i.between?(59, 76)
       else
-        return height > 149 && height < 194
+        return match[1].to_i.between?(150, 193)
       end
     },
     "hcl" => -> val {/^#[\da-f]{6}$/.match?(val)},
