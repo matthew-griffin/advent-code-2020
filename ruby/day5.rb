@@ -19,7 +19,7 @@ def day_5
   seat_ids = File.foreach("../advent-code-2020/Day5Input.txt").map do |line|
     calculate_seat_id(line)
   end
-  puts "Part 1 max seat id: #{seat_ids.max}"
+  puts "Day 5 Part 1 max seat id: #{seat_ids.max}"
   prev_seat_id = -1
   my_seat_id = -1
   seat_ids.sort.each do |id|
@@ -29,5 +29,5 @@ def day_5
     end
     prev_seat_id = id
   end
-  puts "Part 2 my seat id: #{my_seat_id}"
+  puts "Day 5 Part 2 my seat id: #{my_seat_id}"
 end

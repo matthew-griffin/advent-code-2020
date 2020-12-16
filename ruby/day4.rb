@@ -45,6 +45,6 @@ end
 
 def day_4
   input = File.read("../advent-code-2020/Day4Input.txt")
-  puts "Part 1 valid passports: #{count_valid_passports(input)}"
-  puts "Part 2 valid passports: #{count_valid_passports(input, true)}"
+  puts "Day 4 Part 1 valid passports: #{count_valid_passports(input)}"
+  puts "Day 4 Part 2 valid passports: #{count_valid_passports(input, true)}"
 end

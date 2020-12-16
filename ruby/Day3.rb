@@ -19,9 +19,9 @@ end
 
 def day_3
   input = File.read("../advent-code-2020/Day3Input.txt")
-  puts "Part 1 Trees passed: #{count_trees_passed(3,1,input)}"
+  puts "Day 3 Part 1 Trees passed: #{count_trees_passed(3,1,input)}"
 
   velocities = [[1,1], [3,1], [5,1], [7,1], [1,2]]
   trees_passed = velocities.map{|vel| count_trees_passed(vel[0], vel[1], input)}
-  puts "Part 2 Tree product: #{trees_passed.inject(:*)}"
+  puts "Day 3 Part 2 Tree product: #{trees_passed.inject(:*)}"
 end
