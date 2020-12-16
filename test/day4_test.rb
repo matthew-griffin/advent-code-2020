@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require './ruby/day4'
 
-class Day4Test < MiniTest::Unit::TestCase
+class Day4Test < MiniTest::Test
   def setup
     # Do nothing
   end
