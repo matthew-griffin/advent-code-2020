@@ -1,9 +1,10 @@
 require 'set'
 
+Struct.new('Result', :success, :acc, :visited_pcs)
+
 class Program
   def initialize(instructions)
     @instructions = instructions
-    Struct.new('Result', :success, :acc, :visited_pcs)
   end
 
   def run_until_loop
