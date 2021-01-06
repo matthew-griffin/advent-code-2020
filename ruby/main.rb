@@ -6,6 +6,7 @@ require './day7'
 require './day8'
 require './day9'
 require './day10'
+require './day11'
 
 day_3
 day_4
@@ -15,3 +16,4 @@ day_7
 day_8
 day_9
 day_10
+day_11
